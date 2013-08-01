@@ -7,26 +7,11 @@ public class LogicSolver
 
 	private static List<String> exprlist = new ArrayList<String>();
 	private static Map<Character, Boolean> map = new HashMap<Character, Boolean>();
-	static {
+	
+	static 
+	{
 		map.put('T', true);
 		map.put('F', false);
-	}
-
-	public static void main (String[] args) throws java.lang.Exception
-	{
-		//(P&R)|(Q|R)	
-		System.out.println(solve("PR&QR||", 'T', 'T', 'T')); //true
-		System.out.println(solve("PR&QR||", 'T', 'F', 'F')); //false
-
-                //(P&R)&((P&Q)|(R|Q))
-		System.out.println(solve("PR&PQ&RQ||&", 'T', 'F', 'T')); //true
-		System.out.println(solve("PR&PQ&RQ||&", 'F', 'T', 'T')); //false
-
-		//((P&Q)&((P&R)|(Q|R)))&((Q&Q)&(P|R))
-		System.out.println(solve("PQ&PR&QR||&QQ&PR|&&", 'T', 'T', 'T')); //true
-		System.out.println(solve("PQ&PR&QR||&QQ&PR|&&", 'T', 'T', 'F')); //true
-		System.out.println(solve("PQ&PR&QR||&QQ&PR|&&", 'T', 'F', 'F')); //false
-
 	}
 
 	private static boolean solve(String expr, char pTruth, char qTruth, char rTruth)
@@ -98,5 +83,22 @@ public class LogicSolver
 	private static String escape(String s)
 	{
 		return s.replace("|", "\\|").replace("&", "\\&");
+	}
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//(P&R)|(Q|R)	
+		System.out.println(solve("PR&QR||", 'T', 'T', 'T')); //true
+		System.out.println(solve("PR&QR||", 'T', 'F', 'F')); //false
+
+                //(P&R)&((P&Q)|(R|Q))
+		System.out.println(solve("PR&PQ&RQ||&", 'T', 'F', 'T')); //true
+		System.out.println(solve("PR&PQ&RQ||&", 'F', 'T', 'T')); //false
+
+		//((P&Q)&((P&R)|(Q|R)))&((Q&Q)&(P|R))
+		System.out.println(solve("PQ&PR&QR||&QQ&PR|&&", 'T', 'T', 'T')); //true
+		System.out.println(solve("PQ&PR&QR||&QQ&PR|&&", 'T', 'T', 'F')); //true
+		System.out.println(solve("PQ&PR&QR||&QQ&PR|&&", 'T', 'F', 'F')); //false
+
 	}
 }
