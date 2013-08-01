@@ -14,6 +14,7 @@ From left to right, the binary expressions (apart of a bigger expression) are ex
   	[evaluation] => TT&T| => TT| => T		
 
 & and | are the only operators defined.
-P, Q, R are the only variables defined.
+
+P, Q, R are the only variables that can be used.
 
 Verify results at http://www.oriontransfer.co.nz/learn/truth-table-solver/index
