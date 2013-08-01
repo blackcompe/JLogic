@@ -1,26 +1,6 @@
 import java.util.*;
 import java.lang.*;
 
-////////////////////////////////////////////////////////////////
-// A quick and dirty implementation that parses and evaluates a 
-// logical expression in post-fix form. From left to right binary
-// expressions are extracted (3 tokens), evaluated, and it's result
-// is inserted into its place. This is done until the expression is
-// gone. E.g.
-//
-// (P&Q)|R, where P, Q, and R are all true 
-//
-//	[postfix] => PQ&R|
-//	[substitution] => TT&T| 
-//      [evaluation] => TT&T| => TT| => T		
-//
-// Assumes & and | are the only operators defined and thus only binary operations.
-//
-// Verify results at http://www.oriontransfer.co.nz/learn/truth-table-solver/index
-//
-// Author: Ryan Beckett
-////////////////////////////////////////////////////////////////
-
 public class LogicSolver
 {
 	private static boolean debug = true; //'true' to display replacements
