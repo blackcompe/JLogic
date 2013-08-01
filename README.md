@@ -5,13 +5,13 @@ JLogic
 
 From left to right, the binary expressions (apart of a bigger expression) are extracted and evaluated. The result is inserted into its place. This is done until the expression is gone. E.g.
 
-  (P&Q)|R, where P, Q, and R are all true 
+	(P&Q)|R, where P, Q, and R are all true 
   
-  [postfix] => PQ&R|
+  	[postfix] => PQ&R|
   
-  [substitution] => TT&T| 
+  	[substitution] => TT&T| 
   
-  [evaluation] => TT&T| => TT| => T		
+  	[evaluation] => TT&T| => TT| => T		
 
 & and | are the only operators defined.
 P, Q, R are the only variables defined.
