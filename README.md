@@ -8,7 +8,9 @@ From left to right, the binary expressions (apart of a bigger expression) are ex
   (P&Q)|R, where P, Q, and R are all true 
   
   [postfix] => PQ&R|
+  
   [substitution] => TT&T| 
+  
   [evaluation] => TT&T| => TT| => T		
 
 & and | are the only operators defined.
